@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "vote-deployment"
-  namespace: vote
+  namespace: internal
   labels:
     app: vote-service
   annotations:
@@ -43,10 +43,15 @@ spec:
               port: http
           env:
             - name: RUST_LOG
-              value: "info,actix_web=info"
+              value: "info,actix_web=warn"
+            - name: TABLE_NAME
+              value: "WbVotes-stage"
             - name: DYNAMO_REGION
               value: "us-west-2"
             - name: DYNAMO_ENDPOINT
               value: "https://dynamodb.us-west-2.amazonaws.com"
             - name: DATABASE_URL
-              value: "mysql://cyclops:Password1@cyclops.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com:3306/cyclops"
+              valueFrom:
+                secretKeyRef:
+                  name: vote-secrets
+                  key: database-url
