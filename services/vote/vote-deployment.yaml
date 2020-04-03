@@ -44,6 +44,8 @@ spec:
           env:
             - name: RUST_LOG
               value: "info,actix_web=info"
+            - name: BASE_PATH
+              value: "vote"
             - name: PORT
               value: "8000"
             - name: TABLE_NAME
