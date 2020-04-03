@@ -43,7 +43,7 @@ spec:
               port: http
           env:
             - name: RUST_LOG
-              value: "info,actix_web=warn"
+              value: "info,actix_web=info"
             - name: PORT
               value: "8000"
             - name: TABLE_NAME

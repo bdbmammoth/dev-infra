@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: internal-ingress
+  namespace: internal
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+  labels:
+    app: internal-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /vote/*
+            backend:
+              serviceName: vote-service
+              servicePort: 80
