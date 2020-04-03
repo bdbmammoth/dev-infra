@@ -30,7 +30,7 @@ spec:
               memory: "128Mi"
               cpu: "500m"
           ports:
-            - containerPort: 8081
+            - containerPort: 8000
               name: http
               protocol: TCP
           livenessProbe:
@@ -44,6 +44,8 @@ spec:
           env:
             - name: RUST_LOG
               value: "info,actix_web=warn"
+            - name: PORT
+              value: "8000"
             - name: TABLE_NAME
               value: "WbVotes-stage"
             - name: DYNAMO_REGION
