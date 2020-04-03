@@ -22,31 +22,31 @@ spec:
         app: vote-service
     spec:
       containers:
-        - name: vote-service
-          image: 981873564135.dkr.ecr.us-west-2.amazonaws.com/rust-vote-service:c71316c2
-          imagePullPolicy: IfNotPresent
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 8081
-              name: http
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /~/ready
-              port: http
-          env:
-            - name: RUST_LOG
-              value: "info,actix_web=info"
-            - name: DYNAMO_REGION
-              value: "us-west-2"
-            - name: DYNAMO_ENDPOINT
-              value: "https://dynamodb.us-west-2.amazonaws.com"
-            - name: DATABASE_URL
-              value: "mysql://cyclops:Password1@cyclops.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com:3306/cyclops"
+      - name: vote-service
+        image: 981873564135.dkr.ecr.us-west-2.amazonaws.com/rust-vote-service:d629c29e
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /~/ready
+            port: http
+        env:
+        - name: RUST_LOG
+          value: "info,actix_web=info"
+        - name: DYNAMO_REGION
+          value: "us-west-2"
+        - name: DYNAMO_ENDPOINT
+          value: "https://dynamodb.us-west-2.amazonaws.com"
+        - name: DATABASE_URL
+          value: "mysql://cyclops:Password1@cyclops.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com:3306/cyclops"
