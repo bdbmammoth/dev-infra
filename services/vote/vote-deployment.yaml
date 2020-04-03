@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: vote-service
-          image: 981873564135.dkr.ecr.us-west-2.amazonaws.com/rust-vote-service:c71316c2
+          image: 981873564135.dkr.ecr.us-west-2.amazonaws.com/rust-vote-service:d629c29e
           imagePullPolicy: IfNotPresent
           resources:
             limits:
