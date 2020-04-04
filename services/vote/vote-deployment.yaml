@@ -35,11 +35,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /health
+              path: /vote/health
               port: http
           readinessProbe:
             httpGet:
-              path: /~/ready
+              path: /vote/~/ready
               port: http
           env:
             - name: RUST_LOG
