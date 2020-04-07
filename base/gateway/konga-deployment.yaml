@@ -28,3 +28,13 @@ spec:
             - containerPort: 1337
               name: http
               protocol: TCP
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: DB_ADAPTER
+              value: mysql
+            - name: DB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: gateway-secrets
+                  key: konga_db_uri
