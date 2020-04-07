@@ -12,3 +12,5 @@ spec:
   values:
     ingressController:
       installCRDs: false
+    admin:
+      enabled: true
