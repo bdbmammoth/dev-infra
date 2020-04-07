@@ -7,6 +7,7 @@ spec:
   releaseName: kong
   chart:
     repository: https://charts.konghq.com
-    name: kong/kong
+    name: kong
+    version: 1.4.1
   values:
     ingressController.installCRDs: false
