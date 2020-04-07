@@ -9,7 +9,7 @@ metadata:
   annotations:
     # Container Image Automated Updates
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.vote-service: glob:master_.*
+    fluxcd.io/tag.vote: glob:master_*
     # do not apply this manifest on the cluster
     #flux.weave.works/ignore: "true"
 spec:
@@ -23,7 +23,7 @@ spec:
         app: vote-service
     spec:
       containers:
-        - name: vote-service
+        - name: vote
           image: 981873564135.dkr.ecr.us-west-2.amazonaws.com/rust-vote-service:master_cf23671
           imagePullPolicy: IfNotPresent
           resources:
