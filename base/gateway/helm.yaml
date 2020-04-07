@@ -14,3 +14,5 @@ spec:
       installCRDs: false
     admin:
       enabled: true
+      http:
+        enabled: true
