@@ -1,0 +1,12 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kong
+  namespace: gateway
+spec:
+  releaseName: kong
+  chart:
+    repository: https://charts.konghq.com
+    name: kong/kong
+  values:
+    ingressController.installCRDs: false
