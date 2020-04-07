@@ -23,6 +23,8 @@ spec:
       value: test.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com
     - name: KONG_PG_USER
       value: postgres
+    - name: KONG_PG_PORT
+      value: 5432
     - NAME: KONG_PG_PASSWORD
       valueFrom:
         secretKeyRef:
