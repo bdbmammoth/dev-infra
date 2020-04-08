@@ -10,18 +10,19 @@ spec:
     name: kong
     version: 1.4.1
   values:
+    ingressController.installCrds: false
     ingressController:
       installCRDs: false
-    admin:
-      enabled: true
-      http:
-        enabled: true
-    env:
-      database: postgres
-      pg_host: test.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com
-      pg_user: postgres
-      pg_password:
-        valueFrom:
-          secretKeyRef:
-            name: gateway-secrets
-            key: kong_password
+    # admin:
+    #   enabled: true
+    #   http:
+    #     enabled: true
+    # env:
+    #   database: postgres
+    #   pg_host: test.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com
+    #   pg_user: postgres
+    #   pg_password:
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: gateway-secrets
+    #         key: kong_password
