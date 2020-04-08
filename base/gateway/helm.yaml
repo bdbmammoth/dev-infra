@@ -16,17 +16,17 @@ spec:
       enabled: true
       http:
         enabled: true
-    env:
-      - name: KONG_DATABASE
-        value: postgres
-      - name: KONG_PG_HOST
-        value: test.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com
-      - name: KONG_PG_USER
-        value: postgres
-      - name: KONG_PG_PORT
-        value: 5432
-      - NAME: KONG_PG_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: gateway-secrets
-            key: kong_password
+    # env:
+    #   - name: KONG_DATABASE
+    #     value: postgres
+    #   - name: KONG_PG_HOST
+    #     value: test.cluster-cui4fpppzxf7.us-west-2.rds.amazonaws.com
+    #   - name: KONG_PG_USER
+    #     value: postgres
+    #   - name: KONG_PG_PORT
+    #     value: 5432
+    #   - NAME: KONG_PG_PASSWORD
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: gateway-secrets
+    #         key: kong_password
